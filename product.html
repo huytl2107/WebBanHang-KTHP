@@ -1,15 +1,16 @@
-<!doctype html>
+<!-- product.html -->
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Web Ban Hang</title>
-	<link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
-  <body>
-	<!--NavBar-->
+<body>
+    <!--NavBar-->
 	<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">Navbar</a>
@@ -48,41 +49,19 @@
 			</div>
 			<div class="d-flex">
 				<a href="#" class="btn-cart me-2"><i class="bi bi-cart"></i></a>
-				<a href="#" class="btn-dangnhap" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="bi bi-person-circle"></i></a>
+				<a href="#" class="btn-dangnhap"><i class="bi bi-person-circle"></i></a>
 			</div>
 		</div>
 	</nav>
-	
-	<div class="container">
-		<div class="row">
-			<!--Cột Menu-->
-			<div class="menu col-sm-2 d-md-block d-none">
-				<a href="#" class="btn btn-link">Loại sản phẩm 1</a>
-				<a href="#" class="btn btn-link">Loại sản phẩm 2</a>
-				<a href="#" class="btn btn-link">Loại sản phẩm 3</a>
-				<a href="#" class="btn btn-link">Loại sản phẩm 4</a>
-				<a href="#" class="btn btn-link">Loại sản phẩm 5</a>
-				<a href="#" class="btn btn-link">Loại sản phẩm 6</a>
-				<a href="#" class="btn btn-link">Loại sản phẩm 7</a>
-			</div>
-			<!--Cột Sản Phẩm-->
-			<div class="sanpham col-sm-10">
-				<div class="row" id="sanpham">
-					<!--Thêm sản phẩm từ databese-->
-				</div>
-			</div>
-		  </div>
-	<script src="script.js"></script>
+
+    <div class="container">
+        <div class="product" id="product" style="background-color: green;">
+            <h1>Đây là trang chứa thông tin mô tả chi tiết sản phẩm</h1>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  
-	<script>
-		// Fetch and include login modal
-		fetch('login-modal.html')
-		  .then(response => response.text())
-		  .then(data => {
-			document.body.insertAdjacentHTML('beforeend', data);
-		  });
-	  </script>
 
 </body>
 </html>
