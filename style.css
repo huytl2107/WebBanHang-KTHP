@@ -1,0 +1,36 @@
+.menu{
+    background-color: pink;
+    margin:0px auto;
+}
+.sanpham{
+    background-color: blue;
+    margin:0px auto;
+}
+.menu a {
+    text-decoration: none; 
+    color: black;        
+}
+
+.menu a:hover {
+    color: blue;      
+}
+.btn-dangnhap {
+    background: none;
+    border: none;
+}
+.btn-dangnhap i {
+    font-size: 2rem;
+    text-decoration: none; 
+    color: white;  
+}
+.btn-dangnhap i:hover {
+    color: blue;      
+}
+.btn-cart i {
+    font-size: 2rem;
+    text-decoration: none; 
+    color: white;  
+}
+.btn-cart i:hover {
+    color: green;      
+}
