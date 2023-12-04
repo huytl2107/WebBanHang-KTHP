@@ -34,3 +34,9 @@
 .btn-cart i:hover {
     color: green;      
 }
+.btn-buy{
+    width: 60px;
+}
+.btn-addtocart{
+    width: 60px;
+}

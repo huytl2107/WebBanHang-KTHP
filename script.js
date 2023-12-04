@@ -20,9 +20,9 @@ window.onload = function() {
             <div class="card-body d-flex flex-column align-items-center">
                 <h4 class="card-title">${product.title}</h4>
                 <p class="card-text">${product.description}</p>
-                <div class="d-flex justify-content-between w-100">
-                    <a href="#" class="btn btn-primary">Buy</a>
-                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                <div class="d-flex justify-content-around w-100">
+                    <a href="#" class="btn-buy btn btn-success">Buy</a>
+                    <a href="#" class="btn-addtocart btn btn-success"><i class="bi bi-cart"></i></a>
                 </div>
             </div>
         `;
