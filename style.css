@@ -1,14 +1,28 @@
-.menu{
-    background-color: pink;
-    margin:0px auto;
+/* Tùy chỉnh kiểu dáng của menu */
+.menu {
+    background-color: #f8f9fa; /* Màu nền */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hiển thị đường viền bóng */
 }
 .sanpham{
     background-color: white;
     margin:0px auto;
 }
+
+
+  /* Tùy chỉnh kiểu dáng của các nút trong menu */
 .menu a {
-    text-decoration: none; 
-    color: black;        
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #212529; /* Màu chữ */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển động màu nền */
+}
+
+  /* Khi di chuột qua nút, thay đổi màu nền */
+.menu a:hover {
+    background-color: #e9ecef;
 }
 
 .card {
@@ -18,10 +32,6 @@
 .card-title{
     color: black;
     text-decoration: none;
-}
-
-.menu a:hover {
-    color: blue;      
 }
 .btn-dangnhap {
     background: none;
@@ -49,3 +59,4 @@
 .btn-addtocart{
     width: 60px;
 }
+
