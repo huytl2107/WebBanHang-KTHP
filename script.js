@@ -39,4 +39,19 @@ window.onload = function() {
         `;
         productContainer.appendChild(card);
     });
+    // Tạo modal khi trang được tải
+    const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+    const signupModal = new bootstrap.Modal(document.getElementById('signupModal'));
+
+    // Hiển thị modal đăng nhập
+    function showLoginModal() {
+        loginModal.show();
+    }
+
+// Hiển thị modal đăng ký và ẩn modal đăng nhập
+function showSignupModal() {
+    loginModal.hide();
+    signupModal.show();
+}
+
 };
