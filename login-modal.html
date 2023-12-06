@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="loginModal" role="dialog">
+<div class="modal fade" id="loginModal" role="dialog" <?php $_SERVER['PHP_SELF']?>>
     <div class="modal-dialog">
     
       <!-- Modal content-->
@@ -9,19 +9,19 @@
           <a href="#" data-bs-dismiss="modal" style="font-size: 2rem; color: red;"><i class="bi bi-x-square-fill"></i></a>
         </div>
         <div class="modal-body" style="padding:40px 50px;">
-          <form role="form">
+          <form action="login.php" method="POST" role="form">
             <div class="form-group">
               <label for="usrname"> Số điện thoại</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Nhập số điện thoại">
+              <input type="text" name="sdt" class="form-control" id="sdt" placeholder="Nhập số điện thoại">
             </div>
             <div class="form-group">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Mật khẩu</label>
-              <input type="text" class="form-control" id="psw" placeholder="Nhập mật khẩu">
+              <input type="text" name="pass" class="form-control" id="pass" placeholder="Nhập mật khẩu">
             </div>
             <div class="checkbox">
               <label><input type="checkbox" value="" checked>Lưu mật khẩu</label>
             </div>
-              <button type="submit" class="btn btn-success btn-block" style="width: 100%;"><i class="bi bi-power"></i> Đăng nhập</button>
+              <button type="submit" name="dangnhap" class="btn btn-success btn-block" style="width: 100%; margin-top: 10px;"><i class="bi bi-power"></i> Đăng nhập</button>
           </form>
         </div>
         <div class="modal-footer">
