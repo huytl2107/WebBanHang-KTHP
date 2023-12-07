@@ -54,74 +54,20 @@
 		</div>
 	</nav>
 
+
+
     <div class="container">
 		<div class="profile" id="profile" style="background-color: green;">
             <section style="background-color: #eee;">
 				<div class="container py-5">
 				  <div class="row">
-					<div class="col-lg-4">
-					  <div class="card mb-4">
-						<div class="card-body text-center">
-						  <img src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg" alt="avatar"
-							class="rounded-circle img-fluid" style="width: 150px;">
-						  <h5 class="name">Tên người dùng</h5>
-						  <p class="address text-muted mb-4">Quận 8, TPHCM</p>
-						  <div class="d-flex justify-content-center mb-2">
-							<button type="button" class="btn btn-primary">Chỉnh sửa thông tin <i class="bi bi-pen"></i></button>
-						  </div>
-						</div>
-					  </div>
-					</div>
-					<div class="col-lg-8">
-					  <div class="card mb-4">
-						<div class="card-body">
-						  <div class="row">
-							<div class="col-sm-3">
-							  <p class="mb-0">Họ Tên:</p>
-							</div>
-							<div class="col-sm-9">
-							  <p class="text-muted mb-0">Tên người dùng</p>
-							</div>
-						  </div>
-						  <hr>
-						  <div class="row">
-							<div class="col-sm-3">
-							  <p class="mb-0">Email</p>
-							</div>
-							<div class="col-sm-9">
-							  <p class="text-muted mb-0">example@example.com</p>
-							</div>
-						  </div>
-						  <hr>
-						  <div class="row">
-							<div class="col-sm-3">
-							  <p class="mb-0">Số điện thoại</p>
-							</div>
-							<div class="col-sm-9">
-							  <p class="text-muted mb-0">0123456789</p>
-							</div>
-						  </div>
-						  <hr>
-						  <div class="row">
-							<div class="col-sm-3">
-							  <p class="mb-0">Giới tính</p>
-							</div>
-							<div class="col-sm-9">
-							  <p class="text-muted mb-0">Nam</p>
-							</div>
-						  </div>
-						  <hr>
-						  <div class="row">
-							<div class="col-sm-3">
-							  <p class="mb-0">Địa chỉ</p>
-							</div>
-							<div class="col-sm-9">
-							  <p class="text-muted mb-0">Quận 8, TPHCM</p>
-							</div>
-						  </div>
-						</div>
-					  </div>
-					</div>
+					<?php 
+
+					// profile.php
+					require 'class/user.php';
+
+					User::loadThongTinUser();
+					?>
 				  </div>
 				</div>
 			  </section>

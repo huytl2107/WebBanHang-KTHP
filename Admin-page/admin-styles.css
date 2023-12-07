@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    margin-top: 30px;
+}
+.form-row{
+    display: flex;
+    /* gap: 10px; */
+}
+.form-group{
+    margin-bottom: 10px;
+}
+.form-group label{
+    margin-bottom: 5px;
+}
+.add-btn{
+    margin: 10px 0 10px 50%;
+    transform: translateX(-50%);
+}
+@media (max-width: 992px){
+    .form-row{
+        display: block;
+    }
+}
