@@ -1,22 +1,39 @@
 <?php
+    session_start();
+
     //lấy dữ liệu từ form gửi lên
     $sdt = $_POST['sdt'];
     $pass = $_POST['pass'];
     //kết nối đến cơ sở dữ liệu
     require 'db/db_module.php';
+    require 'class/user.php';
     // Tạo kết nối
 
     //truy vấn dữ liệu
     $sql = "select * from tbl_user where sdt='$sdt' and pass='$pass'";
 
     $rs = chayTruyVanTraVeDL($conn, $sql);
-    print_r ($rs);
 
     if(mysqli_num_rows($rs) > 0){
-        echo "<h2>Đăng nhập thành công</h2>";
+        // Lấy dữ liệu từ kết quả truy vấn
+        $userRow = mysqli_fetch_assoc($rs);
+
+        // Tạo đối tượng User từ thông tin lấy được
+        $loggedInUser = new User($userRow['id'], $userRow['sdt'], $userRow['pass']);
+
+        
+        $loggedInUser->luuThongTinUser();
+
+        // Đặt thông báo vào session
+        $_SESSION['login_success'] = true;
     } else{
-        echo "<h2>Đăng nhập thất bại</h2>";
+        // Đặt thông báo vào session
+        $_SESSION['login_failed'] = true;
     }
+    // Chuyển hướng về trang index
+    header("Location: index.php");
+    exit();
+
 
     // Giải phóng bộ nhớ
     giaiPhongBoNho($conn, $rs);
