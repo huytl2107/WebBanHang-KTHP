@@ -19,4 +19,8 @@
     width: 70%;
     text-align: start;
     padding: 0;
+    margin-bottom: 20px;
+}
+#submit-btn{
+    margin-left: 30%;
 }
