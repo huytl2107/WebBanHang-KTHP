@@ -3,7 +3,7 @@
     $sdt = $_POST['sdt'];
     $pass = $_POST['pass'];
     //kết nối đến cơ sở dữ liệu
-    require 'db/connect.php';
+    require 'db/config.php';
     
     //truy vấn dữ liệu
     $sql = "select * from tbl_user where sdt='$sdt' and pass='$pass'";

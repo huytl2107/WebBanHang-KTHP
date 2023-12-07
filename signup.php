@@ -1,6 +1,6 @@
 <?php
 //kết nối với database
-require 'db/connect.php';
+require 'db/config.php';
 if(isset($_POST['btn-dangky'])){
     $sdt_dangky = $_POST['sdt_dangky'];
     $pass_dangky = $_POST['pass_dangky'];
