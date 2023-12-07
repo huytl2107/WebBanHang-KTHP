@@ -7,17 +7,17 @@ if(isset($_GET['keyword'])){
 
     if($result) {
         while($row = mysqli_fetch_assoc($result)){
-            echo "<div class='sanpham col-sm-10'>
+            echo '<div class="sanpham col-sm-10">
                     <div>
-                        <h2>".$row['ten']."</h2>
+                        <h2>'.$row['ten']."'</h2>
                     </div>
-                  </div>";
+                  </div>'";
         }
     } else {
-        echo "<h1>Không có sản phẩm</h1>";
+        echo '<h1>Không có sản phẩm</h1>';
     }
 } else {
-    echo "<h1>Không có sản phẩm</h1>";
+    echo '<h1>Không có sản phẩm</h1>';
 }
 
 ?>
