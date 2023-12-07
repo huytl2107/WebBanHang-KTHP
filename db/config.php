@@ -1,6 +1,12 @@
 <?php
-    define ("HOST", "localhost");
-    define ("DB", "webbanhang");
-    define("USER", "root");
-    define("PASSWORD", "");
+    $host = 'localhost';
+    $username = 'root';
+    $password = '';
+    $dbname = 'webbanhang';
+
+    $conn = new mysqli($host, $username, $password, $dbname);
+
+    if($conn->connect_error){
+        die("Kết nối không thành công". $conn->connect_error);
+    }
 ?>

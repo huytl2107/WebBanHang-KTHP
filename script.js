@@ -24,7 +24,7 @@ window.onload = function() {
         var card = document.createElement('div');
         card.className = 'card col-lg-3 col-md-6';
         card.innerHTML = `
-            <a href="product.html">
+            <a href="product.php">
                 <img class="larger-card-img" src="${product.image}" alt="Card image">
             </a>
             <div class="card-body d-flex flex-column align-items-center">

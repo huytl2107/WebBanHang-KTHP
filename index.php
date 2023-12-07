@@ -57,13 +57,7 @@
 		<div class="row">
 			<!--Cột Menu-->
 			<div class="menu col-sm-2 d-md-block d-none">
-				<a href="#" class="btn btn-link">Loại sản phẩm 1</a>
-				<a href="#" class="btn btn-link">Loại sản phẩm 2</a>
-				<a href="#" class="btn btn-link">Loại sản phẩm 3</a>
-				<a href="#" class="btn btn-link">Loại sản phẩm 4</a>
-				<a href="#" class="btn btn-link">Loại sản phẩm 5</a>
-				<a href="#" class="btn btn-link">Loại sản phẩm 6</a>
-				<a href="#" class="btn btn-link">Loại sản phẩm 7</a>
+				<?php include("menu.php")?>
 			</div>
 			<!--Cột Sản Phẩm-->
 			<div class="sanpham col-sm-10">
