@@ -11,7 +11,7 @@ class User {
     public $sdt;
     public $pass;
 
-    // Phương thức sửa thông tin
+    // Phương thức nhập thông tin
     public function __construct($id, $sdt, $pass, $hoTen = null, $diaChi = null, $email = null, $gioiTinh = null, $role = 0 ) {
         $this->id = $id;
         $this->hoTen = $hoTen;
