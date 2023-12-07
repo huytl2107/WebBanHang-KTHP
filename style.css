@@ -60,3 +60,9 @@
     width: 60px;
 }
 
+.larger-card-img {
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+    align-items: center;
+}
