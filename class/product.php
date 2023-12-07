@@ -1,5 +1,4 @@
 <?php
-// user.php
 class Product {
     // Thuộc tính của đối tượng Product
     public $id;

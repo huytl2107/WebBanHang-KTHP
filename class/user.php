@@ -1,5 +1,4 @@
 <?php
-// user.php
 class User {
     // Thuộc tính của đối tượng User
     public $id;
@@ -43,6 +42,14 @@ class User {
         setcookie('loggedInUser', $userDataJson, time() + 3600, '/');
 
     }
+	public static function checkDangNhap(){
+		// Kiểm tra xem cookie có tồn tại không
+		return isset($_COOKIE['loggedInUser']);
+	}
+	public function checkAdmin(){
+		return $this->role;
+	}
+
     public static function loadThongTinUser(){
         // Kiểm tra xem cookie có tồn tại không
 					if(isset($_COOKIE['loggedInUser'])) {

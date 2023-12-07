@@ -4,6 +4,8 @@
     //lấy dữ liệu từ form gửi lên
     $sdt = $_POST['sdt'];
     $pass = $_POST['pass'];
+    $role;
+
     //kết nối đến cơ sở dữ liệu
     require 'db/db_module.php';
     require 'class/user.php';
@@ -18,12 +20,21 @@
         // Lấy dữ liệu từ kết quả truy vấn
         $userRow = mysqli_fetch_assoc($rs);
 
+        //Nếu role == 1 thì chuyển tới trang admin
+        if($userRow['role'] == 1){
+            $loggedInUser = new User($userRow['id'], $userRow['sdt'], $userRow['pass'], null , null , null , null ,$userRow['role']);
+            setcookie('userRole', 1, time() + 3600, '/');
+            $loggedInUser->luuThongTinUser();
+           
+            header("Location: admin_page/admin.php");
+            exit;
+        }
+        else{
         // Tạo đối tượng User từ thông tin lấy được
         $loggedInUser = new User($userRow['id'], $userRow['sdt'], $userRow['pass']);
 
-        
         $loggedInUser->luuThongTinUser();
-
+        }
         // Đặt thông báo vào session
         $_SESSION['login_success'] = true;
     } else{
