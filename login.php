@@ -19,5 +19,5 @@
     }
 
     // Giải phóng bộ nhớ
-    giaiPhongBoNho($link, $rs);
+    giaiPhongBoNho($conn, $rs);
 ?>

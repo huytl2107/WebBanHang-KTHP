@@ -8,8 +8,8 @@ if(isset($_POST['btn-dangky'])){
     //kiếm tra và insert dữ liệu vào database
     if(!empty($sdt_dangky)&&!empty($pass_dangky)&&!empty($cfpass_dangky)){
         // Escape các giá trị để tránh SQL injection
-        $sdt_dangky = mysqli_real_escape_string($link, $sdt_dangky);
-        $pass_dangky = mysqli_real_escape_string($link, $pass_dangky);
+        $sdt_dangky = mysqli_real_escape_string($conn, $sdt_dangky);
+        $pass_dangky = mysqli_real_escape_string($conn, $pass_dangky);
         // Kiểm tra xem người dùng đã tồn tại chưa
         $check_user_sql = "SELECT * FROM tbl_user WHERE sdt='$sdt_dangky'";
         $check_user_result = chayTruyVanTraVeDL($conn, $check_user_sql);
@@ -27,7 +27,7 @@ if(isset($_POST['btn-dangky'])){
         }
 
         // Giải phóng bộ nhớ
-        giaiPhongBoNho($link, $check_user_result);
+        giaiPhongBoNho($conn, $check_user_result);
     } else {
         echo "Bạn cần nhập đầy đủ thông tin";
     }
