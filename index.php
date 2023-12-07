@@ -45,15 +45,16 @@ session_start();
 						</ul>
 					</li>
 				</ul>
-				<form class="d-flex" role="search">
-					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success me-2" type="submit">Search</button>
+				<form class="d-flex" method="get" role="search">
+					<input class="form-control me-2" type="search" name="keyword" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success me-2" type="submit" action="timkiem.php">Search</button>
 				</form>
 			</div>
 			<div class="d-flex">
 				<a href="#" class="btn-cart me-2"><i class="bi bi-cart"></i></a>
 				<a href="#" class="btn-dangnhap" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="bi bi-person-circle"></i></a>
 			</div>
+			
 		</div>
 	</nav>
 	
@@ -61,7 +62,13 @@ session_start();
 		<div class="row">
 			<!--Cột Menu-->
 			<div class="menu col-sm-2 d-md-block d-none">
-				<?php include("menu.php")?>
+				<a href="#" class="btn btn-link">Loại sản phẩm 1</a>
+				<a href="#" class="btn btn-link">Loại sản phẩm 2</a>
+				<a href="#" class="btn btn-link">Loại sản phẩm 3</a>
+				<a href="#" class="btn btn-link">Loại sản phẩm 4</a>
+				<a href="#" class="btn btn-link">Loại sản phẩm 5</a>
+				<a href="#" class="btn btn-link">Loại sản phẩm 6</a>
+				<a href="#" class="btn btn-link">Loại sản phẩm 7</a>
 			</div>
 			<!--Cột Sản Phẩm-->
 			<div class="sanpham col-sm-10">
