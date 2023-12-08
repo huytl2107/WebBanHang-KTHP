@@ -13,9 +13,9 @@ while ($row = mysqli_fetch_assoc($result)) {
                         </a>
                         <div class="card-body d-flex flex-column align-items-center">
                             <h4 style="height: 60px; overflow: hidden;"><a href="product_details.php?id=' . $row['id'] . ' " class="card-title">' . $row['tenSP'] . '</a></h4>
-                            <p class="card-text">' . $row['giaSP'] . 'đ</p>
+                            <p class="card-text">' . $row['giaSP'] . ',000đ</p>
                             <div class="d-flex justify-content-around w-100">
-                                <a href="#?id=' . $row['id'] . ' " class="btn-buy btn btn-success">Buy</a>
+                                <a href="#?id=' . $row['id'] . ' " class="btn-buy btn btn-success" onclick="laygiaSP(' . $row['id'] . ')">Buy</a>
                                 <a href="#?id=' . $row['id'] . ' " class="btn-addtocart btn btn-success" onclick="addToCart(' . $row['id'] . ')"><i class="bi bi-cart"></i></a>
                                 </div>
                         </div>

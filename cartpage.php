@@ -108,7 +108,7 @@ include('tinhtien.php');
 				var totalPrice = <?php echo $totalPrice; ?>;
 
 				// Hiển thị thông báo hoặc chuyển người dùng đến trang thanh toán
-				alert('Tổng số tiền cần thanh toán: ' + totalPrice + 'đ');
+				alert('Tổng số tiền cần thanh toán: ' + totalPrice + ',000đ');
 			}
 		</script>
 

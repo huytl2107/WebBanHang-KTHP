@@ -20,63 +20,26 @@ session_start();
     <?php include("navbar.php") ?>
 
     <div class="container mt-4">
-        <div class="text-center mt-4">
+
+        <div class="btn-group btn-group-lg" style="margin-top: 5px; margin-bottom:20px;">
+            <button type="button" class="btn btn-primary " onclick="showUserTable()" >User</button>
+            <button type="button" class="btn btn-primary">Product</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal ">Thêm sản phẩm</button>
             <a href="logout.php" class="btn btn-danger">Đăng xuất</a>
-        </div>
-        <div class="d-grid" style="margin-top: 5px;">
-            <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#addProductModal ">Thêm sản phẩm</button>
         </div>
 
         <!--Bảng user-->
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">hoTen</th>
-                    <th scope="col">gioiTinh</th>
-                    <th scope="col">sdt</th>
-                    <th scope="col">email</th>
-                    <th scope="col">diaChi</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Huy</td>
-                    <td>Nam</td>
-                    <td>0123456789</td>
-                    <td>abc@gmail.com</td>
-                    <td>TPHCM</td>
-                    <td><a href="#" class="text-decoration-none text-danger">Xóa<i class="bi bi-person-x"></i></a></td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Otto</td>
-                    <td>Nam</td>
-                    <td>0123456789</td>
-                    <td>abc@gmail.com</td>
-                    <td>TPHCM</td>
-                    <td><a href="#" class="text-decoration-none text-danger">Xóa<i class="bi bi-person-x"></i></a></td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Alex</td>
-                    <td>Nữ</td>
-                    <td>0123456789</td>
-                    <td>abc@gmail.com</td>
-                    <td>TPHCM</td>
-                    <td><a href="#" class="text-decoration-none text-danger">Xóa<i class="bi bi-person-x"></i></a></td>
-                </tr>
-            </tbody>
-        </table>
+        <div id="userTableContainer">
+            <!-- Nội dung bảng người dùng sẽ được cập nhật ở đây -->
+        </div>
 
     </div>
-    <?php include("footer.php");?>
+    <?php include("footer.php"); ?>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
     <!--Hiển thị thông báo-->
-	<?php include("notification.php"); ?>
+    <?php include("notification.php"); ?>
 
 </body>
 

@@ -26,7 +26,7 @@
             setcookie('userRole', 1, time() + 3600, '/');
             $loggedInUser->luuThongTinUser();
            
-            header("Location: admin_page/admin.php");
+            header("Location:admin.php");
             exit;
         }
         else{

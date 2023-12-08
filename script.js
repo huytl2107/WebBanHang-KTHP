@@ -53,3 +53,61 @@ function addToCart(productId) {
     // Gửi dữ liệu
     xhr.send(data);
 }
+function laygiaSP(productId) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'laygiasp.php?productId=' + productId, true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var productPrice = xhr.responseText;
+            alert('Tổng số tiền cần thanh toán: ' + productPrice + ',000đ');
+        }
+    };
+
+    // Gửi yêu cầu để lấy giá tiền của sản phẩm
+    xhr.send();
+}
+
+function showUserTable() {
+    fetch('load_user_table.php', {
+        method: 'POST',
+    })
+        .then(response => response.text())
+        .then(data => {
+            // data chứa nội dung HTML trả về từ PHP
+            // Cập nhật nội dung trang web với dữ liệu mới
+            document.getElementById('userTableContainer').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Có lỗi xảy ra trong quá trình tải dữ liệu:', error);
+            alert('Có lỗi xảy ra trong quá trình tải dữ liệu.');
+        });
+}
+function deleteUser(userId) {
+    // Tạo một đối tượng XMLHttpRequest
+    var xhr = new XMLHttpRequest();
+
+    // Thiết lập phương thức và địa chỉ URL
+    xhr.open('POST', 'delete_user.php', true);
+
+    // Thiết lập header để báo hiệu gửi dữ liệu dưới dạng form data
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    // Xử lý sự kiện khi trạng thái của yêu cầu thay đổi
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            // Kiểm tra xem yêu cầu có thành công hay không (status 200)
+            if (xhr.status === 200) {
+                // Cập nhật lại bảng người dùng nếu xóa thành công
+                document.getElementById('userTableContainer').innerHTML = xhr.responseText;
+            } else {
+                // Hiển thị thông báo nếu có lỗi
+                alert('Có lỗi xảy ra trong quá trình xóa người dùng.');
+            }
+        }
+    };
+
+    // Gửi dữ liệu đến server
+    xhr.send('userId=' + userId);
+}
+

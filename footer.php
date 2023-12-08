@@ -59,7 +59,7 @@
                 <a href="#!" class="text-white"><i class="bi bi-telephone"></i> Hotline: 0934713377</a>
               </li>
               <li>
-                <a href="#!" class="text-white"><i class="bi bi-envelope"></i> Email: nguoibanhang@gmail.con</a>
+                <a href="#!" class="text-white"><i class="bi bi-envelope"></i> Email: admin@gmail.con</a>
               </li>
              
             </ul>

@@ -1,6 +1,6 @@
 
 <?php
-session_start();
+include('tinhtien.php');
 ?>
 
 <!doctype html>
@@ -44,9 +44,9 @@ session_start();
                         </a>
                         <div class="card-body d-flex flex-column align-items-center">
                             <h4 style="height: 60px; overflow: hidden;"><a href="product_details.php?id=' . $row['id'] . ' " class="card-title">' . $row['tenSP'] . '</a></h4>
-                            <p class="card-text">' . $row['giaSP'] . 'đ</p>
+                            <p class="card-text">' . $row['giaSP'] . ', 000đ</p>
                             <div class="d-flex justify-content-around w-100">
-                                <a href="#?id=' . $row['id'] . ' " class="btn-buy btn btn-success">Buy</a>
+                            <a href="#?id=' . $row['id'] . ' " class="btn-buy btn btn-success" onclick="laygiaSP(' . $row['id'] . ')">Buy</a>
                                 <a href="#?id=' . $row['id'] . ' " class="btn-addtocart btn btn-success" onclick="addToCart(' . $row['id'] . ')"><i class="bi bi-cart"></i></a>
                                 </div>
                         </div>
@@ -56,9 +56,9 @@ session_start();
 				</div>
 			</div>
 		  </div>
+    <?php include("footer.php"); ?>
 	<script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 	<!--Hiển thị thông báo-->
 	<?php include("notification.php"); ?>
 
