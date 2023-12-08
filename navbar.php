@@ -39,7 +39,7 @@ echo '
 				if ($user) {
 					// Nếu là admin
 					if(isset($_COOKIE['userRole'])){
-					echo '<a href="admin_page/admin.php" class="btn-dangnhap"><i class="bi bi-person-circle"></i></a>';
+					echo '<a href="admin.php" class="btn-dangnhap"><i class="bi bi-person-circle"></i></a>';
 					} else {
                     // Nếu là user -> Profile.php
                     echo '<a href="profile.php" class="btn-dangnhap"><i class="bi bi-person-circle"></i></a>';

@@ -1,31 +1,52 @@
 <!-- Modal -->
 <div class="modal fade" id="addProductModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="padding:35px 50px; background-color: #198754">
-          <h4 style="color: white;">Đăng ký</h4>
-          <a href="#" data-bs-dismiss="modal" style="font-size: 2rem; color: red;"><i class="bi bi-x-square-fill"></i></a>
-        </div>
-        <div class="modal-body" style="padding:40px 50px;">
-          <form action="signup.php" method="POST" role="form">
-            <div class="form-group">
-              <label for="username"> Số điện thoại</label>
-              <input type="text" class="form-control" name="sdt_dangky" id="sdt_dangky" placeholder="Nhập số điện thoại">
-            </div>
-            <div class="form-group">
-              <label for="psw"> Mật khẩu</label>
-              <input type="text" class="form-control" name="pass_dangky" id="pass_dangky" placeholder="Nhập mật khẩu">
-            </div>
-            <div class="form-group">
-                <label for="psw"> Xác nhận mật khẩu</label>
-                <input type="text" class="form-control" name="cfpass_dangky" id="cfpass_dangky" placeholder="Nhập lại mật khẩu">
-              </div>
-              <button type="submit" name="btn-dangky" class="btn btn-success btn-block" style="width: 100%; margin-top: 10px;"><i class="bi bi-power"></i> Đăng ký</button>
-          </form>
-        </div>        
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="padding:35px 50px; background-color: #0b5ed7">
+        <h4 style="color: white;">Thêm sản phẩm</h4>
+        <a href="#" data-bs-dismiss="modal" style="font-size: 2rem; color: red;"><i class="bi bi-x-square-fill"></i></a>
       </div>
-      
+      <div class="modal-body" style="padding:40px 50px;">
+        <form action="addproduct.php" method="POST" role="form">
+          <div class="form-group">
+            <label for="username"> Tên Sản Phẩm</label>
+            <input type="text" class="form-control" name="tenSP" id="tenSP" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="psw"> Mô tả</label>
+            <input type="text" class="form-control" name="moTa" id="moTa" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="psw"> Giá</label>
+            <input type="text" class="form-control" name="giaSP" id="giaSP" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="loaiSP">Loại sản phẩm</label>
+            <select class="form-control" name="id_type" id="id_type">
+              <option value="1">Tee</option>
+              <option value="2">Polo</option>
+              <option value="3">Shirt</option>
+              <option value="4">Hoodie</option>
+              <option value="5">Shorts</option>
+              <option value="6">Bags</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="psw"> Link ảnh:</label>
+            <input type="text" class="form-control" name="img" id="img" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="psw"> Link ảnh:</label>
+            <input type="text" class="form-control" name="img2" id="img2" placeholder="">
+          </div>
+
+          <button type="submit" name="btn-themsp" class="btn btn-primary btn-block"
+            style="width: 100%; margin-top: 10px;">Thêm</button>
+        </form>
+      </div>
     </div>
-  </div> 
+
+  </div>
+</div>

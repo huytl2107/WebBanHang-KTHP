@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!-- product.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +47,9 @@
 			document.getElementById("email").readOnly = false;
 		});
 	</script>
+
+	<!--Hiển thị thông báo-->
+	<?php include("notification.php"); ?>
 
 </body>
 </html>
