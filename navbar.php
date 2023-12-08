@@ -33,9 +33,9 @@ echo '
 						</ul>
 					</li>
 				</ul>
-				<form class="d-flex" method="get" role="search">
-					<input class="form-control me-2" type="search" name="keyword" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success me-2" type="submit" action="timkiem.php">Search</button>
+				<form class="d-flex" method="get" action="timkiem.php" role="search">
+					<input class="form-control me-2" type="search" name="keyword" id="keyword" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success me-2" type="submit" >Search</button>
 				</form>
 			</div>
 			<div class="d-flex">
