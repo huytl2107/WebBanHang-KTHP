@@ -34,4 +34,7 @@ echo'</div>';
         background-color: yellow; padding: 10px;
         text-align: center; margin-left: 5px; word-spacing: 10px;
     }
+    .centered-content{
+        text-align:center;
+    }
 </style>
