@@ -33,7 +33,7 @@ echo '
 						</ul>
 					</li>
 				</ul>
-				<form class="d-flex" method="get" action="timkiem.php" role="search">
+				<form class="d-flex" method="post" action="timkiem.php" role="search">
 					<input class="form-control me-2" type="search" name="keyword" id="keyword" placeholder="Search" aria-label="Search">
 					<button class="btn btn-outline-success me-2" type="submit" >Search</button>
 				</form>
