@@ -46,7 +46,7 @@ function addToCart(productId) {
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             console.log('Product ID added to cart:', productId);
-
+            alert('Đã thêm sản phẩm vào giỏ hàng');
         }
     };
 

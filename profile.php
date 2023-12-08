@@ -30,7 +30,7 @@ session_start();
 				</div>
 			  </section>
 			  <div class="text-center mt-4">
-            	<a href="logout.php" class="btn btn-danger">Đăng xuất</a>
+            	<a href="logout.php" class="btn btn-danger" style="margin-bottom: 10px">Đăng xuất</a>
         	</div>
         </div>
     </div>

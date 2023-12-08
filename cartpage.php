@@ -1,5 +1,5 @@
 <?php
-session_start()
+include('tinhtien.php');
 ?>
 
 <!doctype html>
@@ -88,7 +88,7 @@ session_start()
 
 									<div class="card">
 										<div class="card-body">
-											<button type="button" class="btn btn-warning btn-block btn-lg" style="width: 100%; --bs-btn-active-bg: #e3bd4c">Mua tất cả</button>
+											<button type="button" class="btn btn-warning btn-block btn-lg" style="width: 100%; --bs-btn-active-bg: #e3bd4c" onclick="buyAll()">Mua tất cả</button>
 										</div>
 									</div>
 								</div>
@@ -101,7 +101,16 @@ session_start()
 		<?php include("footer.php");?>
 		<script src="script.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+		<script>
+			// Hàm xử lý khi người dùng bấm nút "Mua tất cả"
+			function buyAll() {
+				// Gọi hàm tính tổng số tiền từ giỏ hàng
+				var totalPrice = <?php echo $totalPrice; ?>;
 
+				// Hiển thị thông báo hoặc chuyển người dùng đến trang thanh toán
+				alert('Tổng số tiền cần thanh toán: ' + totalPrice + 'đ');
+			}
+		</script>
 
 </body>
 

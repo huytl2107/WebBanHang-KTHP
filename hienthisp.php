@@ -1,6 +1,6 @@
 <?php
 $page=isset($_GET['page'])?$_GET['page']:1;
-$records_per_page=12;//số sản phẩm trên trang
+$records_per_page=8;//số sản phẩm trên trang
 $offset = ($page - 1) * $records_per_page;
 $result = chayTruyVanTraVeDL($conn, "SELECT count(*) FROM tbl_products");
 $row = mysqli_fetch_row($result);

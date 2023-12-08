@@ -35,7 +35,7 @@ session_start();
     					<h2><?php echo $product['tenSP']; ?></h2>
     					<p><?php echo $product['moTa']; ?></p>
     					<p>Giá: <?php echo $product['giaSP']; ?></p>
-    					<button class="btn btn-primary">Thêm vào giỏ hàng</button>
+    					<button class="btn btn-primary" <?php echo 'onclick="addToCart(' . $product["id"] . ')"'; ?>>Thêm vào giỏ hàng</button>
 					</div>
                 </div>
                 <h2 class="mt-4">Sản phẩm liên quan</h2>
