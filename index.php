@@ -26,6 +26,7 @@ session_start();
 			<div class="sanpham col-sm-10">
 				<div class="row" id="sanpham">
 					<!--Thêm sản phẩm từ databese-->
+					<?php include("hienthisp.php")?>
 				</div>
 			</div>
 		  </div>
