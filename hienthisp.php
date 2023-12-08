@@ -1,4 +1,5 @@
 <?php
+
 $result = chayTruyVanTraVeDL($conn, "SELECT count(*) FROM tbl_products");
 $row = mysqli_fetch_row($result);
 $result = chayTruyVanTraVeDL($conn, "SELECT * FROM tbl_products");
@@ -12,9 +13,12 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <h4 style="height: 60px; overflow: hidden;"><a href="product_details.php?id=' . $row['id'] . ' " class="card-title">' . $row['tenSP'] . '</a></h4>
                             <p class="card-text">' . $row['giaSP'] . 'đ</p>
                             <div class="d-flex justify-content-around w-100">
-                                <a href="#" class="btn-buy btn btn-success">Buy</a>
-                                <a href="#" class="btn-addtocart btn btn-success"><i class="bi bi-cart"></i></a>
-                            </div>
+                                <a href="#?id=' . $row['id'] . ' " class="btn-buy btn btn-success">Buy</a>
+                                <a href="#?id=' . $row['id'] . ' " class="btn-addtocart btn btn-success" onclick="addToCart(' . $row['id'] . ')"><i class="bi bi-cart"></i></a>
+                                </div>
                         </div>
                         </div>';
 }
+
+?>
+

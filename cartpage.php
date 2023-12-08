@@ -1,3 +1,7 @@
+<?php
+session_start()
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -11,8 +15,10 @@
 </head>
 
 <body>
+
 	<!--NavBar-->
-	<?php include("navbar.php") ?>
+	<?php include("navbar.php")
+	?>
 
 	<div class="container">
 		<div class="row">
@@ -32,116 +38,56 @@
 										<h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
 									</div>
 
-									<div class="card rounded-3 mb-4">
-										<div class="card-body p-4">
-											<div class="row d-flex justify-content-between align-items-center">
-												<div class="col-md-2 col-lg-2 col-xl-2">
-													<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp" class="img-fluid rounded-3" alt="Cotton T-shirt">
-												</div>
-												<div class="col-md-3 col-lg-3 col-xl-3">
-													<p class="lead fw-normal mb-2">Basic T-shirt</p>
-													<p><span class="text-muted">Size: </span>M <span class="text-muted">Color: </span>Grey</p>
-												</div>
-												<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-													<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
 
-													<input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" />
+									<?php
+									// Kiểm tra xem mảng 'productIds' đã tồn tại trong session chưa
+									if (isset($_SESSION['productIds'])) {
+										$productIds = $_SESSION['productIds'];
+										foreach ($productIds as $productId) {
+											//
+											$query = "SELECT * FROM tbl_products WHERE id = $productId";
+											$result = mysqli_query($conn, $query);
+											// Kiểm tra xem truy vấn có thành công không
+											if ($result) {
+												$product = mysqli_fetch_assoc($result);
+												echo '
+													<div class="card rounded-3 mb-4">
+													<div class="card-body p-4">
+														<div class="row d-flex justify-content-between align-items-center">
+															<div class="col-md-2 col-lg-2 col-xl-2">
+																<img src="' . $product['img'] . '" class="img-fluid rounded-3" alt="Cotton T-shirt">
+															</div>
+															<div class="col-md-3 col-lg-3 col-xl-3">
+																<p class="lead fw-normal mb-2">' . $product['tenSP'] . '</p>
+																<p><span class="text-muted">Size: </span>M <span class="text-muted">Color: </span>Grey</p>
+															</div>
+															<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+																<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector("input[type=number]").stepDown()">-</button>
 
-													<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
-												</div>
-												<div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-													<h5 class="mb-0">$499.00</h5>
-												</div>
-												<div class="col-md-1 col-lg-1 col-xl-1 text-end">
-													<a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
+																<input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" />
 
-									<div class="card rounded-3 mb-4">
-										<div class="card-body p-4">
-											<div class="row d-flex justify-content-between align-items-center">
-												<div class="col-md-2 col-lg-2 col-xl-2">
-													<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp" class="img-fluid rounded-3" alt="Cotton T-shirt">
+																<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector("input[type=number]").stepUp()">+</button>
+															</div>
+															<div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+																<h5 class="mb-0">' . $product['giaSP'] . 'đ</h5>
+															</div>
+															<div class="col-md-1 col-lg-1 col-xl-1 text-end">
+																<a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+															</div>
+														</div>
+													</div>
 												</div>
-												<div class="col-md-3 col-lg-3 col-xl-3">
-													<p class="lead fw-normal mb-2">Basic T-shirt</p>
-													<p><span class="text-muted">Size: </span>M <span class="text-muted">Color: </span>Grey</p>
-												</div>
-												<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-													<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
+													';
+											} else {
+												echo "Lỗi truy vấn: " . mysqli_error($conn);
+											}
+										}
+									}
+									?>
 
-													<input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" />
-
-													<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
-												</div>
-												<div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-													<h5 class="mb-0">$499.00</h5>
-												</div>
-												<div class="col-md-1 col-lg-1 col-xl-1 text-end">
-													<a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
-
-									<div class="card rounded-3 mb-4">
-										<div class="card-body p-4">
-											<div class="row d-flex justify-content-between align-items-center">
-												<div class="col-md-2 col-lg-2 col-xl-2">
-													<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp" class="img-fluid rounded-3" alt="Cotton T-shirt">
-												</div>
-												<div class="col-md-3 col-lg-3 col-xl-3">
-													<p class="lead fw-normal mb-2">Basic T-shirt</p>
-													<p><span class="text-muted">Size: </span>M <span class="text-muted">Color: </span>Grey</p>
-												</div>
-												<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-													<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
-
-													<input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" />
-
-													<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
-												</div>
-												<div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-													<h5 class="mb-0">$499.00</h5>
-												</div>
-												<div class="col-md-1 col-lg-1 col-xl-1 text-end">
-													<a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
-
-									<div class="card rounded-3 mb-4">
-										<div class="card-body p-4">
-											<div class="row d-flex justify-content-between align-items-center">
-												<div class="col-md-2 col-lg-2 col-xl-2">
-													<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp" class="img-fluid rounded-3" alt="Cotton T-shirt">
-												</div>
-												<div class="col-md-3 col-lg-3 col-xl-3">
-													<p class="lead fw-normal mb-2">Basic T-shirt</p>
-													<p><span class="text-muted">Size: </span>M <span class="text-muted">Color: </span>Grey</p>
-												</div>
-												<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-													<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
-
-													<input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" />
-
-													<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
-												</div>
-												<div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-													<h5 class="mb-0">$499.00</h5>
-												</div>
-												<div class="col-md-1 col-lg-1 col-xl-1 text-end">
-													<a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
 									<div class="card">
 										<div class="card-body">
-											<button type="button" class="btn btn-warning btn-block btn-lg" style="width: 100%; --bs-btn-active-bg: #e3bd4c">Buy all</button>
+											<button type="button" class="btn btn-warning btn-block btn-lg" style="width: 100%; --bs-btn-active-bg: #e3bd4c">Mua tất cả</button>
 										</div>
 									</div>
 								</div>
@@ -169,8 +115,8 @@
 				});
 		</script>
 
-		
-		
+
+
 
 </body>
 

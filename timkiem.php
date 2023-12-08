@@ -40,15 +40,15 @@ session_start();
                         while($row=mysqli_fetch_assoc($result)){
                         echo'<div class="card col-lg-3 col-md-6"> 
                         <a href="product_details.php?id=' . $row['id'] . ' ">
-                        <img class="larger-card-img" src="'.$row['img'].'" alt="Card image">
+                        <img class="larger-card-img" src="' . $row['img'] . '" alt="Card image">
                         </a>
                         <div class="card-body d-flex flex-column align-items-center">
-                            <h4 style="height: 60px; overflow: hidden;"><a href="product_details.php?id=' . $row['id'] . '" class="card-title">'.$row['tenSP'].'</a></h4>
-                            <p class="card-text">'.$row['giaSP']. 'đ</p>
+                            <h4 style="height: 60px; overflow: hidden;"><a href="product_details.php?id=' . $row['id'] . ' " class="card-title">' . $row['tenSP'] . '</a></h4>
+                            <p class="card-text">' . $row['giaSP'] . 'đ</p>
                             <div class="d-flex justify-content-around w-100">
-                                <a href="#" class="btn-buy btn btn-success">Buy</a>
-                                <a href="#" class="btn-addtocart btn btn-success"><i class="bi bi-cart"></i></a>
-                            </div>
+                                <a href="#?id=' . $row['id'] . ' " class="btn-buy btn btn-success">Buy</a>
+                                <a href="#?id=' . $row['id'] . ' " class="btn-addtocart btn btn-success" onclick="addToCart(' . $row['id'] . ')"><i class="bi bi-cart"></i></a>
+                                </div>
                         </div>
                         </div>';
                     }
@@ -58,63 +58,29 @@ session_start();
 		  </div>
 	<script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  
 	<script>
-		// Fetch and include login modal
-		fetch('login-modal.html')
-		  .then(response => response.text())
-		  .then(data => {
-			document.body.insertAdjacentHTML('beforeend', data);
-		  });
-		fetch('signup-modal.html')
-		  .then(response => response.text())
-		  .then(data => {
-			document.body.insertAdjacentHTML('beforeend', data);
-		  });
-	  </script>
+			function addToCart(productId) {
+				// Sử dụng Ajax để gửi ID sản phẩm đến trang xử lý PHP
+				var xhr = new XMLHttpRequest();
+				xhr.open('POST', 'addtocart.php', true);
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-	<!--Hiển thị thông báo trả về của form đăng nhập/ đăng ký-->
-<?php
-		// Kiểm tra xem có thông báo đăng nhập thành công hay không
-		if (isset($_SESSION['login_success']) && $_SESSION['login_success']) {
-			echo '<script>alert("Đăng nhập thành công!");</script>';
-			// Đặt session về giá trị mặc định để tránh hiển thị thông báo nhiều lần
-			$_SESSION['login_success'] = false;
-		}
-		// Kiểm tra xem có thông báo đăng nhập thất bại hay không
-		if (isset($_SESSION['login_failed']) && $_SESSION['login_failed']) {
-			echo '<script>alert("Đăng nhập thất bại!");</script>';
-			// Đặt session về giá trị mặc định để tránh hiển thị thông báo nhiều lần
-			$_SESSION['login_failed'] = false;
-		}
-		// Kiểm tra xem có thông báo đăng ký thành công hay không
-		if (isset($_SESSION['signup_success']) && $_SESSION['signup_success']) {
-			echo '<script>alert("Đăng ký thành công!");</script>';
-			// Đặt session về giá trị mặc định để tránh hiển thị thông báo nhiều lần
-			$_SESSION['signup_success'] = false;
-		}
-		// Kiểm tra xem có thông báo ký thất bại hay không
-		if (isset($_SESSION['signup_failed']) && $_SESSION['signup_failed']) {
-			echo '<script>alert("Mật khẩu xác nhận không đúng!");</script>';
-			// Đặt session về giá trị mặc định để tránh hiển thị thông báo nhiều lần
-			$_SESSION['signup_failed'] = false;
-		}
-		if (isset($_SESSION['sdt_tontai']) && $_SESSION['sdt_tontai']) {
-			echo '<script>alert("Số điện thoại này đã được đăng ký!");</script>';
-			// Đặt session về giá trị mặc định để tránh hiển thị thông báo nhiều lần
-			$_SESSION['sdt_tontai'] = false;
-		}
-		if (isset($_SESSION['signup_null']) && $_SESSION['signup_null']) {
-			echo '<script>alert("Không được để trống!");</script>';
-			// Đặt session về giá trị mặc định để tránh hiển thị thông báo nhiều lần
-			$_SESSION['signup_null'] = false;
-		}
-		if (isset($_SESSION['signout']) && $_SESSION['signout']) {
-			echo '<script>alert("Đăng xuất thành công!");</script>';
-			// Đặt session về giá trị mặc định để tránh hiển thị thông báo nhiều lần
-			$_SESSION['signout'] = false;
-		}
-		?>
+				// Định dạng dữ liệu cần gửi
+				var data = 'productId=' + productId;
+
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState == 4 && xhr.status == 200) {
+						console.log('Product ID added to cart:', productId);
+						
+					}
+				};
+
+				// Gửi dữ liệu
+				xhr.send(data);
+			}
+		</script>
+		<!--Hiển thị thông báo-->
+		<?php include("notification.php"); ?>
 
 </body>
 </html>

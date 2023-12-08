@@ -20,7 +20,10 @@ session_start();
     <?php include("navbar.php") ?>
 
     <div class="container mt-4">
-        <div class="d-grid">
+        <div class="text-center mt-4">
+            <a href="logout.php" class="btn btn-danger">Đăng xuất</a>
+        </div>
+        <div class="d-grid" style="margin-top: 5px;">
             <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#addProductModal ">Thêm sản phẩm</button>
         </div>
 

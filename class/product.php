@@ -31,21 +31,7 @@ class Product {
             'img' => $this->img,
             'img2' => $this->img2,
         ];
-        //while ()
-        echo'
-        <div class="card col-lg-3 col-md-6"> 
-        <a href="product_details.php">
-        <img class="larger-card-img" src="'.$img.'" alt="Card image">
-        </a>
-        <div class="card-body d-flex flex-column align-items-center">
-            <h4><a href="product_details.php" class="card-title">'.$tenSP.'</a></h4>
-            <p class="card-text">'.$giaSP.'</p>
-            <div class="d-flex justify-content-around w-100">
-                <a href="#" class="btn-buy btn btn-success">Buy</a>
-                <a href="#" class="btn-addtocart btn btn-success"><i class="bi bi-cart"></i></a>
-            </div>
-        </div>
-        </div>';
+        
     }
         }
 ?>
