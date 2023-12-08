@@ -70,7 +70,7 @@ include('tinhtien.php');
 																<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector("input[type=number]").stepUp()">+</button>
 															</div>
 															<div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-																<h5 class="mb-0">' . $product['giaSP'] . 'đ</h5>
+																<h5 class="mb-0">' . $product['giaSP'] . ',000đ</h5>
 															</div>
 															<div class="col-md-1 col-lg-1 col-xl-1 text-end">
 																<a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>

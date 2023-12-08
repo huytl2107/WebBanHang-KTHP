@@ -34,7 +34,7 @@ session_start();
 					<div class="col-md-6">
     					<h2><?php echo $product['tenSP']; ?></h2>
     					<p><?php echo $product['moTa']; ?></p>
-    					<p>Giá: <?php echo $product['giaSP']; ?></p>
+    					<p>Giá: <?php echo $product['giaSP']; ?>,000đ</p>
     					<button class="btn btn-primary" <?php echo 'onclick="addToCart(' . $product["id"] . ')"'; ?>>Thêm vào giỏ hàng</button>
 					</div>
                 </div>
