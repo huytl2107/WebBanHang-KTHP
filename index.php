@@ -40,27 +40,6 @@ session_start();
 		<!--Hiển thị thông báo-->
 		<?php include("notification.php"); ?>
 
-		<script>
-			function addToCart(productId) {
-				// Sử dụng Ajax để gửi ID sản phẩm đến trang xử lý PHP
-				var xhr = new XMLHttpRequest();
-				xhr.open('POST', 'addtocart.php', true);
-				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-				// Định dạng dữ liệu cần gửi
-				var data = 'productId=' + productId;
-
-				xhr.onreadystatechange = function() {
-					if (xhr.readyState == 4 && xhr.status == 200) {
-						console.log('Product ID added to cart:', productId);
-						
-					}
-				};
-
-				// Gửi dữ liệu
-				xhr.send(data);
-			}
-		</script>
 
 </body>
 

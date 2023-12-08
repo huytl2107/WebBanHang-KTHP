@@ -21,20 +21,36 @@ while ($row = mysqli_fetch_assoc($result)) {
                         </div>
                         </div>';
 }
-echo'<br style="clear:both";/>';
-echo' <div class="centered-content">';
-echo'<div class="paper col-sm-2 ">';
+echo '<br style="clear:both";/>';
+echo '<div class="centered-content">';
+echo '<div class="paper col-sm-2">';
+
+if ($page > 1) {
+    echo '<a href="?page=' . ($page - 1) . '" class="btn btn-primary">&lt; Prev</a> ';
+}
+
 for ($i = 1; $i <= $total; $i++) {
-    echo "<a href='.?page=$i'><$i></a> ";}
-echo'</div>';
-echo'</div>';
+    echo "<button class='btn btn-secondary' onclick='window.location.href=\"?page=$i\"'>$i</button> ";
+}
+
+if ($page < $total) {
+    echo '<a href="?page=' . ($page + 1) . '" class="btn btn-primary">Next &gt;</a> ';
+}
+
+echo '</div>';
+echo '</div>';
 ?>
 <style>
-    .paper{
-        background-color: yellow; padding: 10px;
-        text-align: center; margin-left: 5px; word-spacing: 10px;
+    .paper {
+        background-color: darkgray;
+        padding: 10px;
+        text-align: center;
+        margin-left: 5px;
+        word-spacing: 10px;
+        width: 100%;
     }
-    .centered-content{
-        text-align:center;
+
+    .centered-content {
+        text-align: center;
     }
 </style>
