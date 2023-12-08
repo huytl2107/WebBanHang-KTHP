@@ -30,7 +30,8 @@ if ($page > 1) {
 }
 
 for ($i = 1; $i <= $total; $i++) {
-    echo "<button class='btn btn-secondary' onclick='window.location.href=\"?page=$i\"'>$i</button> ";
+    $class = ($i == $page) ? 'btn-primary' : 'btn-secondary';
+    echo "<button class='btn $class' onclick='window.location.href=\"?page=$i\"'>$i</button> ";
 }
 
 if ($page < $total) {
