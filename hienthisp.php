@@ -1,9 +1,11 @@
 <?php
-
+$page=isset($_GET['page'])?$_GET['page']:1;
+$records_per_page=12;//số sản phẩm trên trang
+$offset = ($page - 1) * $records_per_page;
 $result = chayTruyVanTraVeDL($conn, "SELECT count(*) FROM tbl_products");
 $row = mysqli_fetch_row($result);
-$result = chayTruyVanTraVeDL($conn, "SELECT * FROM tbl_products");
-
+$total=ceil($row[0]/$records_per_page);
+$result = chayTruyVanTraVeDL($conn, "SELECT * FROM tbl_products LIMIT $offset,$records_per_page");
 while ($row = mysqli_fetch_assoc($result)) {
     echo '<div class="card col-lg-3 col-md-6"> 
                         <a href="product_details.php?id=' . $row['id'] . ' ">
@@ -19,6 +21,20 @@ while ($row = mysqli_fetch_assoc($result)) {
                         </div>
                         </div>';
 }
-
+echo'<br style="clear:both";/>';
+echo' <div class="centered-content">';
+echo'<div class="paper col-sm-2 ">';
+for ($i = 1; $i <= $total; $i++) {
+    echo "<a href='.?page=$i'><$i></a> ";}
+echo'</div>';
+echo'</div>';
 ?>
-
+<style>
+    .paper{
+        background-color: yellow; padding: 10px;
+        text-align: center; margin-left: 5px; word-spacing: 10px;
+    }
+    .centered-content{
+        text-align:center;
+    }
+</style>
