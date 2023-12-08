@@ -39,7 +39,7 @@ echo '
 				</form>
 			</div>
 			<div class="d-flex">
-				<a href="#" class="btn-cart me-2"><i class="bi bi-cart"></i></a>';
+				<a href="cartpage.php" class="btn-cart me-2"><i class="bi bi-cart"></i></a>';
 				
 				// Nếu đã đăng nhập 
 				if ($user) {

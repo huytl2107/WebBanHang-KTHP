@@ -7,6 +7,8 @@ if(isset($_GET['keyword'])){
 
     if($result) {
         while($row = mysqli_fetch_assoc($result)){
+            
+
             echo '<div class="sanpham col-sm-10">
                     <div>
                         <h2>'.$row['ten']."'</h2>

@@ -45,7 +45,7 @@
 												<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
 													<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
 
-													<input id="form1" min="0" name="quantity" value="2" type="number" class="form-control form-control-sm" />
+													<input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" />
 
 													<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
 												</div>
@@ -72,7 +72,7 @@
 												<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
 													<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
 
-													<input id="form1" min="0" name="quantity" value="2" type="number" class="form-control form-control-sm" />
+													<input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" />
 
 													<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
 												</div>
@@ -99,7 +99,7 @@
 												<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
 													<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
 
-													<input id="form1" min="0" name="quantity" value="2" type="number" class="form-control form-control-sm" />
+													<input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" />
 
 													<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
 												</div>
@@ -126,7 +126,7 @@
 												<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
 													<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
 
-													<input id="form1" min="0" name="quantity" value="2" type="number" class="form-control form-control-sm" />
+													<input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" />
 
 													<button class="btn btn-link px-2" style="text-decoration: none;" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
 												</div>

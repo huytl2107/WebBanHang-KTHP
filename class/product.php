@@ -31,6 +31,7 @@ class Product {
             'img' => $this->img,
             'img2' => $this->img2,
         ];
+        //while ()
         echo'
         <div class="card col-lg-3 col-md-6"> 
         <a href="product_details.php">
