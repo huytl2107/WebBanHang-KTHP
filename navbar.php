@@ -1,10 +1,11 @@
 <?php 
 require 'class/user.php';
+include('db\db_module.php');
 $user = User::checkDangNhap();
 echo '
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#">Home</a>
+			<a class="navbar-brand" href="index.php">Home</a>
 			<button class="navbar-toggler ms-auto me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -14,24 +15,17 @@ echo '
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							Loại sản phẩm
 						</a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">Action</a></li>
-							<li><a class="dropdown-item" href="#">Another action</a></li>
-							<li><hr class="dropdown-divider"></li>
-							<li><a class="dropdown-item" href="#">Something else here</a></li>
+						<ul class="dropdown-menu">';
+
+							$result = chayTruyVanTraVeDL($conn, "select * from tbl_products_types");
+								while($rows = mysqli_fetch_assoc($result)){
+								echo 
+    						 	"<li><a class='dropdown-item' href='?dm=" .$rows['id_type']."' class='btn btn-link'>".$rows['name_type']."</a></li>";
+								}
+							echo '
 						</ul>
 					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Dropdown
-						</a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">Action</a></li>
-							<li><a class="dropdown-item" href="#">Another action</a></li>
-							<li><hr class="dropdown-divider"></li>
-							<li><a class="dropdown-item" href="#">Something else here</a></li>
-						</ul>
-					</li>
+					
 				</ul>
 				<form class="d-flex" method="post" action="timkiem.php" role="search">
 					<input class="form-control me-2" type="search" name="keyword" id="keyword" placeholder="Search" aria-label="Search">

@@ -7,7 +7,7 @@ if(isset($keyword)){
 }else{
     $result = chayTruyVanTraVeDL($conn, "SELECT count(*) FROM tbl_products");
 }
-$row = mysqli_fetch_row($result);
+$row = mysqli_fetch_row($result);   
 if(isset($keyword))
     $result = chayTruyVanTraVeDL($conn, "SELECT * FROM tbl_products WHERE tenSP LIKE '%".$keyword."%'");
     while($row=mysqli_fetch_assoc($result)){
