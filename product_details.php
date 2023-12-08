@@ -15,7 +15,9 @@ session_start();
 </head>
 <body>
     <!--NavBar-->
-	<?php include("navbar.php") ?>
+	<?php include("navbar.php");
+		include('get_product_details.php'); 
+	?>
 
     <div class="container mt-4">
 		<div class="row">
@@ -24,23 +26,23 @@ session_start();
 				<?php include("menu.php")?>
 			</div>
 			<!--Cột chứa thông tin sản phẩm-->
-			<div class="col-sm-10">
-				<div class="row">
+            <div class="col-sm-10">
+                <div class="row">
 					<div class="col-md-6">
-						<img src="https://cdn.tgdd.vn/Products/Images/8781/228334/bhx/thit-dui-heo-cp-khay-500g-202203251606270580.jpg" class="img-fluid" alt="Product Image">
+   						<img src="<?php echo $product['img']; ?>" class="img-fluid" alt="Product Image">
 					</div>
 					<div class="col-md-6">
-						<h2>Tên Sản Phẩm</h2>
-						<p>Mô tả ngắn về sản phẩm...</p>
-						<button class="btn btn-primary">Thêm vào giỏ hàng</button>
+    					<h2><?php echo $product['tenSP']; ?></h2>
+    					<p><?php echo $product['moTa']; ?></p>
+    					<p>Giá: <?php echo $product['giaSP']; ?></p>
+    					<button class="btn btn-primary">Thêm vào giỏ hàng</button>
 					</div>
-				</div>
-
-				<h2 class="mt-4">Sản phẩm liên quan</h2>
-				<div class="row" id="sanpham">
-					<!--Thêm thẻ sản phẩm từ databese-->
-				</div>
-			</div>
+                </div>
+                <h2 class="mt-4">Sản phẩm liên quan</h2>
+                <div class="row" id="sanpham">
+                    <!-- Thêm thẻ sản phẩm từ database -->
+                </div>
+            </div>
 		</div>
     </div>
 
