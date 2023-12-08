@@ -30,22 +30,12 @@ session_start();
 				</div>
 			</div>
 		  </div>  
-	<script>
-		// Fetch and include login modal
-		fetch('login-modal.html')
-		  .then(response => response.text())
-		  .then(data => {
-			document.body.insertAdjacentHTML('beforeend', data);
-		  });
-		fetch('signup-modal.html')
-		  .then(response => response.text())
-		  .then(data => {
-			document.body.insertAdjacentHTML('beforeend', data);
-		  });
-	  </script>
+
+	<script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 	<!--Hiển thị thông báo trả về của form đăng nhập/ đăng ký-->
-<?php
+	<?php
 		// Kiểm tra xem có thông báo đăng nhập thành công hay không
 		if (isset($_SESSION['login_success']) && $_SESSION['login_success']) {
 			echo '<script>alert("Đăng nhập thành công!");</script>';

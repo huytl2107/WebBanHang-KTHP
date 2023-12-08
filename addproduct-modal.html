@@ -1,0 +1,31 @@
+<!-- Modal -->
+<div class="modal fade" id="addProductModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px; background-color: #198754">
+          <h4 style="color: white;">Đăng ký</h4>
+          <a href="#" data-bs-dismiss="modal" style="font-size: 2rem; color: red;"><i class="bi bi-x-square-fill"></i></a>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form action="signup.php" method="POST" role="form">
+            <div class="form-group">
+              <label for="username"> Số điện thoại</label>
+              <input type="text" class="form-control" name="sdt_dangky" id="sdt_dangky" placeholder="Nhập số điện thoại">
+            </div>
+            <div class="form-group">
+              <label for="psw"> Mật khẩu</label>
+              <input type="text" class="form-control" name="pass_dangky" id="pass_dangky" placeholder="Nhập mật khẩu">
+            </div>
+            <div class="form-group">
+                <label for="psw"> Xác nhận mật khẩu</label>
+                <input type="text" class="form-control" name="cfpass_dangky" id="cfpass_dangky" placeholder="Nhập lại mật khẩu">
+              </div>
+              <button type="submit" name="btn-dangky" class="btn btn-success btn-block" style="width: 100%; margin-top: 10px;"><i class="bi bi-power"></i> Đăng ký</button>
+          </form>
+        </div>        
+      </div>
+      
+    </div>
+  </div> 
