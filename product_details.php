@@ -23,13 +23,7 @@ session_start();
 		<div class="row">
 			<!--Cột Menu-->
 			<div class="menu col-sm-2 d-md-block d-none">
-				<a href="index.php" class="btn btn-link">Tee</a>
-				<a href="index.php" class="btn btn-link">Polo</a>
-				<a href="index.php" class="btn btn-link">Shirt</a>
-				<a href="index.php" class="btn btn-link">Hoodie</a>
-				<a href="index.php" class="btn btn-link">Shorts</a>
-				<a href="index.php" class="btn btn-link">Bags</a>
-				
+				<?php include("menu.php")?>
 			</div>
 			<!--Cột chứa thông tin sản phẩm-->
             <div class="col-sm-10">
@@ -47,7 +41,6 @@ session_start();
                 <h2 class="mt-4">Sản phẩm liên quan</h2>
                 <div class="row" id="sanpham">
 				<?php
-				// Check if $relatedProducts is set and not null
 				if (isset($relatedProducts) && !is_null($relatedProducts)) {
 					foreach ($relatedProducts as $relatedProduct) {
 						echo '<div class="card col-lg-3 col-md-6"> 
