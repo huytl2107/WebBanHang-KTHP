@@ -40,7 +40,28 @@ session_start();
                 </div>
                 <h2 class="mt-4">Sản phẩm liên quan</h2>
                 <div class="row" id="sanpham">
-                    <!-- Thêm thẻ sản phẩm từ database -->
+				<?php
+				// Check if $relatedProducts is set and not null
+				if (isset($relatedProducts) && !is_null($relatedProducts)) {
+					foreach ($relatedProducts as $relatedProduct) {
+						echo '<div class="card col-lg-3 col-md-6"> 
+									<a href="product_details.php?id=' . $relatedProduct['id'] . ' ">
+									<img class="larger-card-img" src="' . $relatedProduct['img'] . '" alt="Card image">
+									</a>
+									<div class="card-body d-flex flex-column align-items-center">
+										<h4 style="height: 60px; overflow: hidden;"><a href="product_details.php?id=' . $relatedProduct['id'] . '" class="card-title">' . $relatedProduct['tenSP'] . '</a></h4>
+										<p class="card-text">' . $relatedProduct['giaSP'] . ',000đ</p>
+										<div class="d-flex justify-content-around w-100">
+											<a href="#?id=' . $relatedProduct['id'] . '" class="btn-buy btn btn-success" onclick="laygiaSP(' . $relatedProduct['id'] . ')">Buy</a>
+											<a href="#?id=' . $relatedProduct['id'] . '" class="btn-addtocart btn btn-success" onclick="addToCart(' . $relatedProduct['id'] . ')"><i class="bi bi-cart"></i></a>
+										</div>
+									</div>
+								</div>';
+					}
+				} else {
+					echo '<p>Không có sản phẩm liên quan.</p>';
+				}
+				?>
                 </div>
             </div>
 		</div>
