@@ -49,10 +49,22 @@ class User {
 	public function checkAdmin(){
 		return $this->role;
 	}
+
+	public function isSDTExist($sdt) {
+		global $conn;
+	
+		$query = "SELECT COUNT(*) AS count FROM tbl_user WHERE sdt = '$sdt' AND id != " . $this->id;
+		$result = mysqli_query($conn, $query);
+		$row = mysqli_fetch_assoc($result);
+	
+		return ($row['count'] > 0);
+	}
+
 	public function updateUserInfo($hoTen, $diaChi, $email, $gioiTinh, $sdt) {
-        // Sử dụng biến $conn, đây là kết nối đến cơ sở dữ liệu
         global $conn;
-    
+		
+		// Kiểm tra số điện thoại đã tồn tại hay không
+
         // Thực hiện cập nhật thông tin người dùng trong cơ sở dữ liệu
         $sql = "UPDATE tbl_user SET 
                 hoTen = '$hoTen',

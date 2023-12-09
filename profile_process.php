@@ -4,7 +4,6 @@ include("class\user.php");
 session_start();
 
 if (User::checkDangNhap()) {
-    session_start();
     $userDataJson = $_COOKIE['loggedInUser'];
     $userData = json_decode($userDataJson, true);
 
@@ -20,14 +19,19 @@ if (User::checkDangNhap()) {
         $gioiTinh = $_POST['gioiTinh'];
         $sodt = $_POST['sdt'];
 
-        // Cập nhật thông tin người dùng
-        $loggedInUser->updateUserInfo($hoTen, $diaChi, $email, $gioiTinh, $sodt);
-        //Lưu user vừa cập nhật vào cookie
-        $loggedInUser->luuThongTinUser();
-
-        // Redirect hoặc hiển thị thông báo thành công tùy thuộc vào yêu cầu của bạn
-        header("Location: profile.php?success=1");
-        exit();
+        if($loggedInUser->isSDTExist($sodt)){
+            // Chuyển hướng về trang profile
+            echo '<script>alert("Số điện thoại đã tồn tại. Vui lòng chọn số điện thoại khác.")</script>';
+            echo '<meta http-equiv="refresh" content="0;url=profile.php">';
+            exit();              
+        } else {
+            // Cập nhật thông tin người dùng
+            $loggedInUser->updateUserInfo($hoTen, $diaChi, $email, $gioiTinh, $sodt);
+            //Lưu user vừa cập nhật vào cookie
+            $loggedInUser->luuThongTinUser();
+            header("Location: profile.php?success=1");
+            exit();
+        }
     }
 } else {
     // Người dùng chưa đăng nhập
