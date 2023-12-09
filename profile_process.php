@@ -22,13 +22,15 @@ if (User::checkDangNhap()) {
 
         // Cập nhật thông tin người dùng
         $loggedInUser->updateUserInfo($hoTen, $diaChi, $email, $gioiTinh, $sodt);
+        //Lưu user vừa cập nhật vào cookie
+        $loggedInUser->luuThongTinUser();
 
         // Redirect hoặc hiển thị thông báo thành công tùy thuộc vào yêu cầu của bạn
         header("Location: profile.php?success=1");
         exit();
     }
 } else {
-    // Người dùng chưa đăng nhập, xử lý theo ý của bạn
+    // Người dùng chưa đăng nhập
     header("Location: login.php");
     exit();
 }
