@@ -23,14 +23,19 @@ session_start();
 
         <div class="btn-group btn-group-lg" style="margin-top: 5px; margin-bottom:20px;">
             <button type="button" class="btn btn-primary " onclick="showUserTable()" >User</button>
-            <button type="button" class="btn btn-primary">Product</button>
+            <button type="button" class="btn btn-primary" onclick="showProductsTable()" >Product</button>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal ">Thêm sản phẩm</button>
             <a href="logout.php" class="btn btn-danger">Đăng xuất</a>
         </div>
 
         <!--Bảng user-->
-        <div id="userTableContainer">
+        <div id="userTableContainer" >
             <!-- Nội dung bảng người dùng sẽ được cập nhật ở đây -->
+        </div>
+
+        <!--Bảng sản phẩm-->
+        <div id="productsTableContainer" >
+            <!-- Nội dung bảng sản phẩm sẽ được cập nhật ở đây -->
         </div>
 
     </div>

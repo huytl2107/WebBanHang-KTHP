@@ -66,3 +66,10 @@
     object-fit: cover; 
     align-items: center;
 }
+.table-container {
+    display: none;
+}
+
+.table-container.active {
+    display: block;
+}

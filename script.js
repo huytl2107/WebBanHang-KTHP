@@ -77,6 +77,8 @@ function showUserTable() {
             // data chứa nội dung HTML trả về từ PHP
             // Cập nhật nội dung trang web với dữ liệu mới
             document.getElementById('userTableContainer').innerHTML = data;
+            document.getElementById('userTableContainer').classList.remove('d-none');
+            document.getElementById('productsTableContainer').classList.add('d-none');
         })
         .catch(error => {
             console.error('Có lỗi xảy ra trong quá trình tải dữ liệu:', error);
@@ -100,6 +102,9 @@ function deleteUser(userId) {
             if (xhr.status === 200) {
                 // Cập nhật lại bảng người dùng nếu xóa thành công
                 document.getElementById('userTableContainer').innerHTML = xhr.responseText;
+                // Thông báo xóa thành công
+                alert('Xóa người dùng thành công!');
+
             } else {
                 // Hiển thị thông báo nếu có lỗi
                 alert('Có lỗi xảy ra trong quá trình xóa người dùng.');
@@ -110,4 +115,50 @@ function deleteUser(userId) {
     // Gửi dữ liệu đến server
     xhr.send('userId=' + userId);
 }
+function showProductsTable(page) {
+    fetch('load_products_table.php?page=' + page, {
+        method: 'POST',
+    })
+        .then(response => response.text())
+        .then(data => {
+            // data chứa nội dung HTML trả về từ PHP
+            // Cập nhật nội dung trang web với dữ liệu mới
+            document.getElementById('productsTableContainer').innerHTML = data;
+            document.getElementById('userTableContainer').classList.add('d-none');
+            document.getElementById('productsTableContainer').classList.remove('d-none');
+        })
+        .catch(error => {
+            console.error('Có lỗi xảy ra trong quá trình tải dữ liệu:', error);
+            alert('Có lỗi xảy ra trong quá trình tải dữ liệu.');
+        });
+}
+function deleteProduct(productId) {
+    // Tạo một đối tượng XMLHttpRequest
+    var xhr = new XMLHttpRequest();
 
+    // Thiết lập phương thức và địa chỉ URL
+    xhr.open('POST', 'delete_product.php', true);
+
+    // Thiết lập header để báo hiệu gửi dữ liệu dưới dạng form data
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    // Xử lý sự kiện khi trạng thái của yêu cầu thay đổi
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            // Kiểm tra xem yêu cầu có thành công hay không (status 200)
+            if (xhr.status === 200) {
+                // Cập nhật lại bảng sản phẩm nếu xóa thành công
+                showProductsTable(1);
+                // Thông báo xóa thành công
+                alert('Xóa sản phẩm thành công!');
+
+            } else {
+                // Hiển thị thông báo nếu có lỗi
+                alert('Có lỗi xảy ra trong quá trình xóa sản phẩm.');
+            }
+        }
+    };
+
+    // Gửi dữ liệu đến server
+    xhr.send('productId=' + productId);
+}

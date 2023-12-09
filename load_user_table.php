@@ -1,5 +1,5 @@
 <?php
-// Kết nối CSDL (điều này phải được thực hiện trong tệp của bạn)
+// Kết nối CSDL
 include('db/config.php');
 
 // Truy vấn để lấy dữ liệu người dùng
@@ -10,7 +10,7 @@ $result = mysqli_query($conn, $query);
 $html = '<table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Id</th>
+                    <th scope="col">id</th>
                     <th scope="col">hoTen</th>
                     <th scope="col">gioiTinh</th>
                     <th scope="col">sdt</th>
