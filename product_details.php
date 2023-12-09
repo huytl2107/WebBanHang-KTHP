@@ -23,7 +23,13 @@ session_start();
 		<div class="row">
 			<!--Cột Menu-->
 			<div class="menu col-sm-2 d-md-block d-none">
-				<?php include("menu.php")?>
+				<a href="index.php" class="btn btn-link">Tee</a>
+				<a href="index.php" class="btn btn-link">Polo</a>
+				<a href="index.php" class="btn btn-link">Shirt</a>
+				<a href="index.php" class="btn btn-link">Hoodie</a>
+				<a href="index.php" class="btn btn-link">Shorts</a>
+				<a href="index.php" class="btn btn-link">Bags</a>
+				
 			</div>
 			<!--Cột chứa thông tin sản phẩm-->
             <div class="col-sm-10">
