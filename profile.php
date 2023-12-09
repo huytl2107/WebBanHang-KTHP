@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Tiết Sản Phẩm</title>
+    <title>Thông tin người dùng</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
@@ -23,7 +23,6 @@ session_start();
 				<div class="container py-5">
 				  <div class="row">
 					<?php 
-
 					User::loadThongTinUser();
 					?>
 				  </div>
@@ -44,9 +43,11 @@ session_start();
 			document.getElementById("ten").readOnly = false;
 			document.getElementById("gioiTinh").readOnly = false;
 			document.getElementById("diaChi").readOnly = false;
-			document.getElementById("soDienThoai").readOnly = false;
+			document.getElementById("sdt").readOnly = false;
 			document.getElementById("email").readOnly = false;
+			document.querySelector('[name="btnLuu"]').style.display = "block";
 		});
+		
 	</script>
 
 	<!--Hiển thị thông báo-->

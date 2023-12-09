@@ -18,7 +18,6 @@ include('tinhtien.php');
 <body>
 	<!--NavBar-->
 	<?php include("navbar.php") ?>
-
 	<div class="container">
 		<div class="row">
 			<!--Cột Menu-->

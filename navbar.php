@@ -53,4 +53,3 @@ echo '
 			</div>
 		</div>
 	</nav>';
-?>
