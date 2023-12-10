@@ -1,5 +1,5 @@
 <?php
-    include('db\config.php');
+    include(__DIR__ . '/db/config.php');
 
     // Kiểm tra xem có tham số id sản phẩm được chuyển qua không
     if (isset($_GET['id'])) {

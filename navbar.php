@@ -1,6 +1,6 @@
 <?php 
 require 'class/user.php';
-include('db\db_module.php');
+include(__DIR__ . '/db/db_module.php');
 $user = User::checkDangNhap();
 echo '
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
@@ -39,7 +39,9 @@ echo '
 				if ($user) {
 					// Nếu là admin
 					if(isset($_COOKIE['userRole'])){
-					echo '<a href="admin.php" class="btn-dangnhap"><i class="bi bi-person-circle"></i></a>';
+					echo '
+					<a href="admin.php?btn-dangnhap=true" class="btn-dangnhap"><i class="bi bi-person-circle"></i></a>
+					';
 					} else {
                     // Nếu là user -> Profile.php
                     echo '<a href="profile.php" class="btn-dangnhap"><i class="bi bi-person-circle"></i></a>';

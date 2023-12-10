@@ -1,6 +1,6 @@
 <?php
-include("db\config.php");
-include("class\user.php");
+include("db/config.php");
+include("class/user.php");
 session_start();
 
 if (User::checkDangNhap()) {

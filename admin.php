@@ -17,9 +17,10 @@ session_start();
 
 <body>
     <!--NavBar-->
-    <?php include("navbar.php") ?>
-
-    <div class="container mt-4">
+    <?php include("navbar.php");
+    if(isset($_GET['btn-dangnhap']) && $_GET['btn-dangnhap'] == 'true'){
+        echo '
+        <div class="container mt-4">
 
         <div class="btn-group btn-group-lg" style="margin-top: 5px; margin-bottom:20px;">
             <button type="button" class="btn btn-primary " onclick="showUserTable()" >User</button>
@@ -38,7 +39,14 @@ session_start();
             <!-- Nội dung bảng sản phẩm sẽ được cập nhật ở đây -->
         </div>
 
-    </div>
+        </div>
+        ';
+
+    }
+    
+    ?>
+
+    
     <?php include("footer.php"); ?>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
