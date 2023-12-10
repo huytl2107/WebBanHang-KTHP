@@ -60,4 +60,9 @@
 			// Đặt session về giá trị mặc định để tránh hiển thị thông báo nhiều lần
 			$_SESSION['addSP_loi'] = false;
 		}
+		if (isset($_SESSION['admin_success']) && $_SESSION['admin_success']) {
+			echo '<script>alert("Đăng nhập vào tài khoản Admin thành công!");</script>';
+			// Đặt session về giá trị mặc định để tránh hiển thị thông báo nhiều lần
+			$_SESSION['admin_success'] = false;
+		}
 		?>

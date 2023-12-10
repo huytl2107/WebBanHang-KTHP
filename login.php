@@ -20,13 +20,13 @@
         // Lấy dữ liệu từ kết quả truy vấn
         $userRow = mysqli_fetch_assoc($rs);
 
-        //Nếu role == 1 thì chuyển tới trang admin
+        //Nếu role == 1 thì chuyển về trang chủ
         if($userRow['role'] == 1){
             $loggedInUser = new User($userRow['id'], $userRow['sdt'], $userRow['pass'], null , null , null , null ,$userRow['role']);
             setcookie('userRole', 1, time() + 3600, '/');
             $loggedInUser->luuThongTinUser();
-           
-            header("Location:admin.php");
+            $_SESSION['admin_success'] = true;
+            header("Location:index.php");
             exit;
         }
         else{
